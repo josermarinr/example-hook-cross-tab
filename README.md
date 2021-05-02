@@ -1,16 +1,18 @@
-# template React
+# Implementation and use of Package hook-cross-tab
 
-## simple TODO app in react & typescript
 
-To use
+clone this repo
+
+install all dependencies
 
 ```
 npm i
 ```
 
-dependecies used
+the use exact of package is 
 
-* react
-* react-bootstrap
-* react-router
-* uuid (optional)
+```
+ const [todos, setTodos] = UniversalState({key:"tareas",initialState: [], option: "broadcast"})
+```
+
+enjoy

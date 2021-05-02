@@ -8,6 +8,7 @@ export interface TodoFormProps {
 }
 
 export interface task {
+  id: string | number | null
   value: string
   isCompleted: boolean
 }

@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import { UniversalState } from "hook-cross-tab/lib";
+import React from "react";
 import { Todo } from "./Todo";
 import { TodoForm } from "./TodoForm";
 
-export const TodoList = ({name, id}:{name: string, id: any}) => {
-  const [todos, setTodos] = useState<any[]>([]);
-
+export const TodoList = () => {
+ //const [todos, setTodos] = useState<any[]>([]);
+  const [todos, setTodos] = UniversalState({key:"tareas",initialState: [], option: "broadcast"})
   const add = (todo: any) => {
     if (!todo.value || /^\s*$/.test(todo.value)) {
       return;
@@ -15,14 +16,14 @@ export const TodoList = ({name, id}:{name: string, id: any}) => {
     setTodos(newTodos);
   };
 
-  const updateTodo = (todoId: number, newValue: any) => {
+  const updateTodo = (todoId: string, newValue: any) => {
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
 
-    setTodos((prev) =>
-      prev.map((item) => (item.id === todoId ? newValue : item))
-    );
+    let TaskUpdated= [...todos].find((todo) => todo.id === todoId);
+    TaskUpdated.values = newValue
+    setTodos(TaskUpdated)
   };
 
   const removeTodo = (id: Number) => {
@@ -32,7 +33,7 @@ export const TodoList = ({name, id}:{name: string, id: any}) => {
   };
 
   const completeTodo = (id: string) => {
-    let updatedTodos = todos.map((todo) => {
+    let updatedTodos = todos.map((todo: any) => {
       if (todo.id === id) {
         todo.isComplete = !todo.isComplete;
       }
@@ -45,19 +46,16 @@ export const TodoList = ({name, id}:{name: string, id: any}) => {
 
   return (
     <div>
-      <div className="todo__header">
-        <h1>TODO of {id} </h1>
-        <span>by {name}</span>
-      </div>
-
       <TodoForm onSubmit={add} />
-
+    {todos ?
       <Todo
         todos={todos}
         updateTodo={updateTodo}
         completeTodo={completeTodo}
         removeTodo={removeTodo}
-      />
+      />: null
+    }
+
     </div>
   );
 };
