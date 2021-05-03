@@ -18,6 +18,7 @@ the use exact of package is
 ```
  const [todos, setTodos] = UniversalState({key:"tareas",initialState: [], option: "broadcast"})
 ```
+
 for know the effect without hook go to app.tsx and uncomment line 27-29 and comment the rest of line 19-24
 
 in this repo you find two implementation, one with broadcast and other with localStorage
