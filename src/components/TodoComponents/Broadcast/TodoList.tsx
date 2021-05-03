@@ -4,7 +4,6 @@ import { Todo } from "./Todo";
 import { TodoForm } from "./TodoForm";
 
 export const TodoList = () => {
- //const [todos, setTodos] = useState<any[]>([]);
   const [todos, setTodos] = UniversalState({key:"tareas",initialState: [], option: "broadcast"})
   const add = (todo: any) => {
     if (!todo.value || /^\s*$/.test(todo.value)) {
@@ -46,6 +45,7 @@ export const TodoList = () => {
 
   return (
     <div>
+      <h1>broadcast props</h1>
       <TodoForm onSubmit={add} />
     {todos ?
       <Todo

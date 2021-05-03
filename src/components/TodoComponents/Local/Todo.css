@@ -1,0 +1,162 @@
+.dashboard {
+  margin: 0;
+  /* background: linear-gradient(
+    90deg,
+    rgba(48, 16, 255, 1) 0%,
+    rgba(100, 115, 255, 1) 100%
+  ); */
+
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.dashboard_app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 520px;
+  min-height: 600px;
+  background:#fff;
+  text-align: center;
+  margin: 128px auto;
+  border-radius: 10px;
+  padding-bottom: 32px;
+  box-shadow: -15px 10px #929fb1;
+}
+
+.todo__header {
+  margin-bottom: 32px;
+  margin-top: 50px;
+}
+
+.todo__header h1 {
+  color: #424242;
+  font-size: 24px !important;
+}
+
+.complete {
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+
+.todo__form {
+  margin-top: 20px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.todo__input {
+  padding: 14px 32px 14px 16px !important;
+  border-radius: 4px 0 0 4px;
+  border: 2px solid #7756FD !important;
+  outline: none !important;
+  width: 320px !important;
+  background: transparent !important;
+  color: #fff;
+}
+
+.todo__input::placeholder {
+  color: #e2e2e2;
+}
+.todo__input:focus {
+  outline-width: 0 !important;
+  appearance: none;
+  outline: none;
+}
+
+.todo__button {
+  padding: 16px;
+  border: none;
+  border-color: transparent !important;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  outline: none;
+  background: linear-gradient(
+    90deg,
+    #7756FD 0%,
+    #681999 100%
+  );
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.todo__input.edit {
+  border: 2px solid #463588!important;
+}
+
+.todo__button.edit {
+  background: linear-gradient(
+    90deg,
+    #463588 0%,
+    #7e5dff 100%
+  );
+  /*padding: 16px 22px;*/
+}
+
+.todo__container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.todo__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  background: linear-gradient(
+    90deg,
+     #7756FD 0%,
+    #681999 100%
+  );
+
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+.todo__task{
+  width: 70%;
+  display: flex;
+  justify-content: flex-start;
+}
+.todo__row:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    #463588 0%,
+    #7e5dff 100%
+  );
+}
+
+.todo__row:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    #5f5979 0%,
+    #271864 100%
+  );
+}
+
+.todo__row:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    #31226d 0%,
+    #a895f3 100%
+  );
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.delete-icon {
+  margin-right: 5px;
+  color: #fff;
+}
+
+.edit-icon {
+  color: #fff;
+}
