@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { Todo } from "./Todo";
 import { TodoForm } from "./TodoForm";
 
-export const Without = () => {
- const [todos, setTodos] = useState<any[]>([]);
+export const WithoutHookCrossTab = () => {
+   const [todos, setTodos] = useState<any[]>([]);
   const add = (todo: any) => {
     if (!todo.value || /^\s*$/.test(todo.value)) {
       return;
@@ -45,7 +45,7 @@ export const Without = () => {
 
   return (
     <div>
-      <h1>broadcast props</h1>
+       <h1>without hook-cross-tab </h1>
       <TodoForm onSubmit={add} />
     {todos ?
       <Todo
